@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- section-sign-in -->
+    <section class="container">
+        <h1>Login</h1>
+        <form class="container-box" >
+            <div class="input-container">
+                <input type="text" placeholder="User Name" required class="true false" id="username" autocomplete="username">
+                <i class='bx bxs-user icon'></i>                
+            </div>
+            <div class="input-container">
+                <input type="password" placeholder="Password" required class="true false" id="password" autocomplete="current-password">
+                <i class='bx bxs-lock-alt icon'></i>               
+            </div>
+            <p class="p1" id="forgot-password">Forgot password?</p>
+            <button type="submit" onclick="add()">Log in</button>
+        </form>
+        <p class="p" id="forget">Don't have an account? <span class="toggle-button a">sign up</span></p>
+    </section>
+
+    <!-- section-sign-up -->
+    <section class="sign-up container active">
+        <div class="container-sign-up">
+            <h2>sign-up</h2>
+            <form action="" class="container-box">
+                <div class="name-row">
+                    <div class="input-container">
+                        <input type="text" placeholder="First Name" required class="true false" id="fristname" oninput="validfirstname()" autocomplete="given-name">
+                        <i class='bx bx-user icon'></i>
+                        <i class='bx bx-check-circle trueicon'></i>
+                        <i class='bx bx-x-circle falseicon'></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" placeholder="Second Name" required class="false true" id="secondname" oninput="validsecondname()" autocomplete="family-name">
+                        <i class='bx bx-user icon'></i>
+                        <i class='bx bx-check-circle trueicon'></i>
+                        <i class='bx bx-x-circle falseicon'></i>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input type="email" placeholder="Email" required class="true false" id="email" oninput="validemail()" autocomplete="email">
+                    <i class='bx bx-envelope icon'></i>
+                    <i class='bx bx-check-circle trueicon'></i>
+                    <i class='bx bx-x-circle falseicon'></i>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Username" required class="true false" id="username2" oninput="validusername2()" autocomplete="username">
+                    <i class='bx bx-user icon'></i>
+                    <i class='bx bx-check-circle trueicon'></i>
+                    <i class='bx bx-x-circle falseicon'></i>
+                </div>
+                    <div class="input-container">
+                    <input type="text" placeholder="Phone Number" required class="true false" id="phonenumber" oninput="validphonenumber()" autocomplete="tel">
+                    <i class='bx bx-phone icon'></i>
+                    <i class='bx bx-check-circle trueicon'></i>
+                    <i class='bx bx-x-circle falseicon'></i>
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Password" required class="true false" id="password2" oninput="validpassword2()" autocomplete="new-password">
+                    <i class='bx bx-lock-alt icon'></i>
+                    <i class='bx bx-check-circle trueicon'></i>
+                    <i class='bx bx-x-circle falseicon'></i>
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Confirm Password" required class="true false" id="confirmpassword" oninput="validconfirmpassword()" autocomplete="new-password">
+                    <i class='bx bx-lock-alt icon'></i>
+                    <i class='bx bx-check-circle trueicon'></i>
+                    <i class='bx bx-x-circle falseicon'></i>
+                </div>
+                <button type="button" id="sign-up">Sign Up</button>
+                <p id="message" class="message"></p>
+            </form>
+            <h3>Have an account? <span class="btn2 a">Log in</span></h3>
+        </div>
+    </section>
+
+    <!-- section-forget-password -->
+    <section class="container container3 active" id="forgot-password-section">
+        <div class="container-forget-password">
+            <h2>Forget Password</h2>
+            <form action="" class="container-box">
+                <div class="input-container">
+                    <input type="email" placeholder="Enter your email" required class="true false" id="email3" oninput="validforgetpassword()" autocomplete="email">
+                    <i class='bx bx-envelope icon'></i>
+                    <i class='bx bx-check-circle trueicon'></i>
+                    <i class='bx bx-x-circle falseicon'></i>
+                </div>
+                <div class="name-row2 input-container">
+                    <p class="p1">send cood</p>
+                    <input type="text" required class="true false" id="cood" autocomplete="one-time-code">
+
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Phone Number" required class="true false" id="phonenumber2" oninput="validphonenumber2()" autocomplete="tel">
+                    <i class='bx bx-phone icon'></i>
+                    <i class='bx bx-check-circle trueicon'></i>
+                    <i class='bx bx-x-circle falseicon'></i>
+                </div>
+                <div class="name-row2 input-container">
+                    <p class="p1">send cood</p>
+                    <input type="text" required class="true false" id="cood2" autocomplete="one-time-code">
+                </div>
+                <div class="name-row">
+                    <div class="input-container">
+                        <input type="password" placeholder="New Password" required class="true false" id="password3" oninput="validpassword3()" autocomplete="new-password">
+                        <i class='bx bx-lock-alt icon'></i>
+                        <i class='bx bx-check-circle trueicon'></i>
+                        <i class='bx bx-x-circle falseicon'></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" placeholder="Confirm Password" required class="true false" id="confirmpassword2" oninput="validconfirmpassword2()" autocomplete="new-password">
+                        <i class='bx bx-lock-alt icon'></i>
+                        <i class='bx bx-check-circle trueicon'></i>
+                        <i class='bx bx-x-circle falseicon'></i>
+                    </div>
+                </div>
+                <button type="button" id="reset-password">Reset Password</button> 
+                <p id="message2" class="message2"></p>
+            </form>
+            <h3>Remembered your password? <span class="btn3 a" id="btn4">Log in</span></h3>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

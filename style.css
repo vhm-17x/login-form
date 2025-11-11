@@ -1,0 +1,373 @@
+body {
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+:root{
+    --bg-color:#1f242d;
+    --second-bg-color:#323946;
+    --main-color:#4e94f3;
+    --white-color:#ffffff;
+    --disabled-color:#fff3;
+    --red-color:#e74c3c;
+    --green-color:#27ae60;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--disabled-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: var(--second-bg-color);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--white-color);
+    font-family: Arial, sans-serif;
+    transition: all .3s ease-in-out;
+}
+
+
+.active {
+display: none;
+}
+
+.a {
+    color: var(--bg-color);
+    text-decoration: none;
+
+}
+
+.container-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    font-size: .875rem;
+}
+
+.container-box input {
+    width: 90%;
+    height: 2rem;
+    margin-top: 10px;
+    background: var(--bg-color);
+    border:var(--disabled-color) 1px solid;
+    padding: 10 10px;
+    border-radius: 5px;
+}
+
+.container-box button {
+  width: 100%;
+  height: 3rem;
+  color: var(--main-color);
+  background: transparent;
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: .995rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 0;
+  margin-top: 1.5rem;
+}
+
+.container-box p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--disabled-color);
+    cursor: default;
+}
+
+.container-box button::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 200%;
+  height: 0;
+  border-radius: 0 0 50% 50%;
+  background: var(--main-color);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+
+.container-box button:hover {
+  color: var(--bg-color);
+}
+
+.container-box button:hover::before {
+    top: -30px;
+    left: -30px;
+}
+
+button:active::before {
+background: var(--main-color);
+transition: background 0s 0.6s;
+}
+
+.container:hover {
+    box-shadow: var(--main-color) 0 0 10px, var(--main-color) 0 0 20px, var(--main-color) 0 0 30px;
+    border: var(--main-color) 2px solid;
+}
+
+.container:hover h1, .container:hover h2 {
+    color: var(--main-color);
+}
+
+.container:hover .container-box  {
+    color: var(--main-color);
+}
+
+.container:hover .a {
+    color: var(--main-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container:hover .p {
+    color: var(--white-color);
+}
+
+.container:hover .p1 {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.container3:hover {
+    border: var(--main-color) 2px solid;
+}
+
+.container3 h3 {
+    font-size: 1.2rem; 
+    font-weight: normal; 
+}
+
+.container:hover button {
+
+    box-shadow: var(--main-color) 0 0 5px;
+}
+
+.container-box input:disabled {
+    background: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+button:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transition: all .3s ease-in-out;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container .icon {
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: var(--white-color);
+    pointer-events: none;
+}
+
+.name-row {
+    display: flex;
+    gap: 20px; 
+}
+
+.name-row .input-container {
+    flex-grow: 1;
+}
+
+.name-row input {
+    width: 80%;
+}
+
+.input-container input {
+    padding-left: 35px;
+}
+
+.input-container input:focus {
+    border: var(--main-color) 2px solid;
+    box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
+    transform: scale(1.02); 
+    color: var(--main-color);
+}
+
+.input-container input:focus + .icon {
+    color: var(--main-color);
+}
+
+.true {
+    border: 2px solid var(--green-color);
+    box-shadow: 0 0 10px var(--green-color), 0 0 20px var(--green-color);
+}
+
+.false {
+    border: 2px solid var(--red-color);
+    box-shadow: 0 0 10px var(--red-color), 0 0 20px var(--red-color);
+}
+
+.trueicon {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: var(--green-color);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.falseicon {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: var(--red-color);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.message {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.message.show {
+  opacity: 1;
+}
+
+.message.error {
+  color: var(--red-color);
+  animation: shake 0.5s;
+}
+
+.message.success {
+  color: var(--green-color);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+
+
+.name-row2 {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    gap: 10rem;
+}
+
+.name-row2 p {
+    width: auto;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--white-color);
+    white-space: nowrap;
+}
+
+
+.message2 {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.message2.show {
+  opacity: 1;
+}
+
+.message2.error {
+  color: var(--red-color);
+  animation: shake2 0.5s;
+}
+
+.message2.success {
+  color: var(--green-color);
+}
+
+@keyframes shake2 {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+@media screen and (max-width: 768px) {
+
+    .container, .sign-up, .container3 {
+        width: 85%;
+        margin: 30px auto;
+    }
+
+    .name-row {
+        flex-direction: column;
+        gap: 0; 
+        width: 90%;
+        gap: 0;
+        width: 100%;
+    }
+
+    .name-row input {
+        width: 100%;
+        width: 90%;
+    }
+
+    .name-row2 {
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    .name-row2 p {
+        width: auto; 
+        margin-top: 20px; 
+    }
+
+    .name-row2 input {
+        flex-grow: 0; 
+        width: 50%; 
+    }
+}
+
+
+@media screen and (max-width: 637px) {
+    .container, .sign-up, .container3 {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container, .sign-up, .container3 {
+        width: 95%;
+        padding: 15px;
+    }
+}
